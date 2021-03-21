@@ -1,0 +1,81 @@
+<%-include('partials/header'); -%>
+
+
+    <!--login starts-->
+
+
+
+
+    <main>
+
+        <div class="login-content">
+
+
+
+            <div class="login-box">
+
+                <div class="login-header">
+
+                    <p class="login-header-text">Login</p>
+
+                </div>
+
+                <form action="/login" method="POST" class="login-box-form">
+
+                    <div>
+                        <p class="l-form-item-header">User name</p>
+                        <input class="login-input <%= error.username ? 'is-invalid' : '' %>" type="text" name="username" id="username" placeholder="Enter your user name">
+                        <p class="l-message"><%= error.username && error.username %></p>
+                    </div>
+
+
+
+                    <div>
+                        <p class="l-form-item-header">Password</p>
+                        <input class="login-input <%= error.password ? 'is-invalid' : '' %>" type="password" name="password" id="password" placeholder="Enter your password">
+                        <p class="l-message"><%= error.password && error.password %></p>
+                    </div>
+
+
+
+
+                    <div>
+                        <p class="l-input-lower">Forgot password? <a href="">click here</a> Don't have an account? <a href="/signup">Click here</a></p>
+                    </div>
+
+                    <div class="login-button-div">
+                        <input class="login-input-button" type="submit" name="" id="" value="Login">
+                    </div>
+
+
+                </form>
+
+                <div class="login-social">
+
+                    <p>Login with your social media</p>
+
+                    <ul class="login-social-list">
+                        <li class="login-social-item"><img src="/facebook.png" alt=""></li>
+                        <li class="login-social-item"><img src="/twitter.png" alt=""></li>
+                        <li class="login-social-item"><img src="/instagram.png" alt=""></li>
+                    </ul>
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </main>
+
+
+
+
+    <!--login ends-->
+
+
+
+    <%-include('partials/footer'); -%>

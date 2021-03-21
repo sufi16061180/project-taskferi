@@ -1,0 +1,99 @@
+<%-include('partials/userHeader'); -%>
+
+
+<main>
+
+    <div class="csp-content">
+
+
+
+            <div class="csp-header">
+
+
+                <p class="csp-header-text">Edit seller profile</p>
+
+            </div>
+
+            <div class="csp-profile-pic">
+
+                <img src="<%= user.profilePics %>" alt="Profile Pics" class="csp-image" id="profilePics">
+
+                <form action="" id="profilePicsForm">
+
+                    <input type="file" name="profilePics" id="profilePicsFile" accept="image/*"/>
+                    <input type="button" value="Remove" id="removeProfilePics" style="display: <%= user.profilePics.includes('defaultuser.png') ? 'none' : 'block' %>" class="csp-remove-button">
+
+                </form>
+
+            </div>
+
+            
+            <form action="/sellerprofile/edit-sellerprofile" method="POST">
+
+                <div>
+                    <p class="csp-form-item-header">Title</p>
+                    <input class="csp-input <%= error.title ? 'is-invalid' : '' %>" value="<%= profile.title%>" type="text" name="title" id="title" placeholder="Enter title">
+                    <p class="csp-message"> <%= error.title && error.title %> </p>
+                </div>
+
+                <div>
+                    <p class="csp-form-item-header">Full name</p>
+                    <input class="csp-input" type="text" name="fullname" id="fullname" placeholder="Enter full name" value="<%= user.fullname%>" disabled>
+                    <p class="csp-message"></p>
+                </div>
+
+                <div>
+                    <p class="csp-form-item-header">User name</p>
+                    <input class="csp-input" type="text" name="username" id="username" placeholder="Enter user name" value="<%= user.username%>" disabled>
+                    <p class="csp-message"></p>
+                </div>
+
+
+                <div>
+                    <p class="csp-form-item-header">Email</p>
+                    <input class="csp-input" type="text" name="email" id="email" placeholder="Enter email" value="<%= user.email%>" disabled>
+                    <p class="csp-message"></p>
+                </div>
+
+
+                <div>
+                    <p class="csp-form-item-header">Mobile number</p>
+                    <input class="csp-input" type="text" name="mobilenumber" id="mobilenumber" placeholder="Enter mobile number" value="<%= user.mobilenumber%>" disabled>
+                    <p class="csp-message"></p>
+                </div>
+
+                <div>
+                    <p class="csp-form-item-header">Birthdate</p>
+                    <input class="csp-input" type="text" name="birthdate" id="birthdate" placeholder="Enter birthdate" value="<%= user.birthdate%>" disabled>
+                    <p class="csp-message"></p>
+                </div>
+
+
+                <div>
+                    <p class="csp-form-item-header">Description</p>
+                    <textarea class="csp-input-d  <%= error.description ? 'is-invalid' : '' %>" type="text" name="description" id="description" placeholder="Enter description"><%= profile.description %></textarea>
+                    <p class="csp-message"> <%= error.description && error.description %> </p>
+                </div>
+
+
+                <div class="csp-button-div">
+                    <input class="csp-input-button" type="submit" name="" id="" value="Update">
+                </div>
+
+
+            </form>
+
+
+
+
+
+
+    </div>
+
+
+</main>
+
+<%-include('partials/footer'); -%>
+
+
+

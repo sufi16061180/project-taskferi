@@ -1,0 +1,73 @@
+<%-include('partials/userHeader'); -%>
+
+
+<main>
+
+    <div class="csp-content">
+
+
+
+            <div class="csp-header">
+
+
+                <p class="csp-header-text">Create gig
+                </p>
+
+            </div>
+
+            <div class="csp-profile-pic">
+
+                <img src="/uploads/thum.png" alt="Profile Pics" class="thum" id="profilePics">
+
+                <form action="" id="profilePicsForm">
+
+                    <input type="file" name="profilePics" id="profilePicsFile" accept="image/*"/>
+                    <input type="button" value="Remove" id="removeProfilePics" style="display: <%= user.profilePics.includes('defaultuser.png') ? 'none' : 'block' %>" class="csp-remove-button">
+
+                </form>
+
+            </div>
+
+            
+            <form action="/gigs/create-gig" method="POST">
+
+                <div>
+                    <p class="csp-form-item-header">Gig title</p>
+                    <input class="csp-input <%= error.gigtitle ? 'is-invalid' : '' %>" value="<%= value.gigtitle ? value.gigtitle : '' %>" type="text" name="gigtitle" id="gigtitle" placeholder="Enter gig title">
+                    <p class="csp-message"><%= error.gigtitle && error.gigtitle %></p>
+                </div>
+
+                <div>
+                    <p class="csp-form-item-header">Gig price</p>
+                    <input class="csp-input  <%= error.gigprice ? 'is-invalid' : '' %>" value="<%= value.gigprice ? value.gigprice : '' %>" type="number" name="gigprice" id="gigprice" placeholder="Enter gig price" >
+                    <p class="csp-message"><%= error.gigprice && error.gigprice %></p>
+                </div>
+
+                <div>
+                    <p class="csp-form-item-header">Gig description</p>
+                    <textarea class="csp-input-d  <%= error.gigdescription ? 'is-invalid' : '' %>" type="text" name="gigdescription" id="gigdescription" placeholder="Enter gig description"><%= value.gigdescription ? value.gigdescription : '' %></textarea>
+                    <p class="csp-message"><%= error.gigdescription && error.gigdescription %></p>
+                </div>
+
+
+                <div class="csp-button-div">
+                    <input class="csp-input-button" type="submit" name="" id="" value="Create gig">
+                </div>
+
+
+            </form>
+
+
+
+
+
+
+    </div>
+
+
+</main>
+
+<%-include('partials/footer'); -%>
+
+
+

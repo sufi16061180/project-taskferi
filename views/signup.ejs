@@ -1,0 +1,131 @@
+<%-include('partials/header'); -%>
+
+
+
+
+
+    <!--signup starts-->
+
+
+
+
+    <main>
+
+        <div class="signup-content">
+
+
+
+            <div class="signup-box">
+
+                <div class="signup-header">
+
+                    <p class="signup-header-text">Sign up</p>
+
+                </div>
+
+                <form action="/signup" method="POST" class="signup-box-form">
+
+                    <div>
+                        <p class="s-form-item-header">Full name</p>
+                        <input class="signup-input <%= error.fullname ? 'is-invalid' : '' %>" type="text" name="fullname" id="fullname" placeholder="Enter your full name" value="<%= value.fullname ? value.fullname : '' %>" >
+                        <p class="s-message"> <%= error.fullname && error.fullname %> </p>
+                    </div>
+
+                    <div>
+                        <p class="s-form-item-header">User name</p>
+                        <input class="signup-input <%= error.username ? 'is-invalid' : '' %>" type="text" name="username" id="username" placeholder="Enter your user name" value="<%= value.username ? value.username : '' %>">
+                        <p class="s-message"> <%= error.username && error.username %> </p>
+                    </div>
+
+                    <div>
+                        <p class="s-form-item-header">Email</p>
+                        <input class="signup-input <%= error.email ? 'is-invalid' : '' %>" type="text" name="email" id="email" placeholder="Enter your email address" value="<%= value.email ? value.email : '' %>">
+                        <p class="s-message"> <%= error.email && error.email %> </p>
+                    </div>
+
+                    <div>
+                        <p class="s-form-item-header">Mobile number</p>
+                        <input class="signup-input <%= error.mobilenumber ? 'is-invalid' : '' %>" type="number" name="mobilenumber" id="mobilenumber" placeholder="Enter your mobile number" value="<%= value.mobilenumber ? value.mobilenumber : '' %>">
+                        <p class="s-message"> <%= error.mobilenumber && error.mobilenumber %> </p>
+                    </div>
+
+                    <div class="s-twoinone">
+                        <div>
+                            <p class="s-form-item-header">Birthdate</p>
+                            <input class="signup-input21 <%= error.birthdate ? 'is-invalid' : '' %>" type="date"  name="birthdate" id="birthdate" placeholder="Enter your birthdate" >
+                            <p class="s-message"> <%= error.birthdate && error.birthdate %> </p>
+                        </div>
+
+                        <div>
+                            <p class="s-form-item-header">Gender</p>
+                            <select class="signup-input21  <%= error.gender ? 'is-invalid' : '' %>" name="gender" id="gender" >
+                                <option name="gender" value="">Choose</option>
+                                <option name="gender" value="male">Male</option>
+                                <option name="gender" value="female">Female</option>
+                            </select>
+                            <p class="s-message"> <%= error.gender && error.gender %> </p>
+                        </div>
+                    </div>
+
+                    <div class="s-twoinone">
+                        <div>
+                            <p class="s-form-item-header">Password</p>
+                            <input class="signup-input21 <%= error.password ? 'is-invalid' : '' %>" type="password" name="password" id="password" placeholder="Enter your password" value="<%= value.password ? value.password : '' %>">
+                            <p class="s-message"> <%= error.password && error.password %> </p>
+                        </div>
+
+                        <div>
+                            <p class="s-form-item-header">Confirm password</p>
+                            <input class="signup-input21  <%= error.confirmpassword ? 'is-invalid' : '' %>" type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm your password" >
+                            <p class="s-message"> <%= error.confirmpassword && error.confirmpassword %> </p>
+                        </div>
+                    </div>
+
+                    <div class="s-agree-checkbox">
+                        <input class="signup-input32" type="checkbox">
+                        <p class="s-input-lower">Agree to our terms & conditions</p>
+                    </div>
+
+
+                    <div class="signup-button-div">
+                        <input class="signup-input-button" type="submit" name="" id="" value="Sign up">
+                    </div>
+
+
+                    <div>
+                        <p class="s-input-lower">Already have an account? <a href="/login">Login here</a></p>
+                    </div>
+
+                </form>
+
+                <div class="signup-social">
+
+                    <p>Login with your social media</p>
+
+                    <ul class="signup-social-list">
+                        <li class="signup-social-item"><img src="/facebook.png" alt=""></li>
+                        <li class="signup-social-item"><img src="/twitter.png" alt=""></li>
+                        <li class="signup-social-item"><img src="/instagram.png" alt=""></li>
+                    </ul>
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </main>
+
+
+
+
+    <!--signup ends-->
+
+
+
+
+
+    <%-include('partials/footer'); -%>

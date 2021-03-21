@@ -1,0 +1,82 @@
+<%-include('partials/userHeader'); -%>
+
+<main>
+
+    
+  <div class="g-profilepage-button">
+
+    <a href="#">General profile</a>
+    <a href="/sellerprofile">Seller profile</a>
+  </div>
+
+  <div class="g-profile-container">
+    <div class="g-profile-top-container">
+
+      <div class="gptc-left">
+        <img class="g-profile-image" src="<%= user.profilePics %>" alt="">
+        <p class="g-profile-miname"><%= user.fullname %></p>
+        <p class="g-profile-age">24yrs</p>
+        <p class="g-profile-citycountry">Mirpur, Dhaka, Bangladesh</p>
+        <a href="/profile/edit-profile" class="edit-button">Edit</a>
+      </div>
+      <div class="gptc-right">
+        <p class="gptcr-container-heading">About</p>
+        <p class="gptcr-description"><%= user.about %></p>
+      </div>
+
+
+    </div>
+
+
+    <div class="g-profile-bottom-container">
+
+      <p class="gpbc-container-heading">Informations</p>
+
+        <div class="gpbc">
+          <p class="gpbc-heading">Full name</p>
+          <p class="gpbc-fullname"><%= user.fullname %></p>
+        </div>
+
+        <div class="gpbc">
+          <p class="gpbc-heading">User name</p>
+          <p class="gpbc-username"><%= user.username %></p>
+        </div>
+
+
+        <div class="gpbc">
+          <p class="gpbc-heading">Email</p>
+          <p class="gpbc-email"><%= user.email %></p>
+        </div>
+
+        <div class="gpbc">
+          <p class="gpbc-heading">Mobile number</p>
+          <p class="gpbc-number"><%= user.mobilenumber %></p>
+        </div>
+
+        <div class="gpbc">
+          <p class="gpbc-heading">Birthdate</p>
+          <p class="gpbc-birthdate"><%= user.birthdate %></p>
+        </div>
+
+        <div class="gpbc">
+          <p class="gpbc-heading">Gender</p>
+          <p class="gpbc-gender"><%= user.gender %></p>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+
+
+</main>
+<%-include('partials/footer'); -%>

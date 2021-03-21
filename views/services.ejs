@@ -1,0 +1,67 @@
+<%-include('partials/userHeader'); -%>
+
+    <!--login starts-->
+
+
+
+
+    <main>
+
+        <div class="services-container">
+
+            <% if(gigs.length === 0) { %>
+
+                <div>
+                  <p>Nothing to show</p>
+                </div>
+        
+              <%}else {%>
+                <% for (let gig of gigs){%>
+        
+                  
+                      <div class="post-container">
+                        <a href="/services/<%=gig._id%>" class="gig-anchor">
+                        <img src="<%= gig.thumbnail %>" alt="">
+                        <p class="p-title" ><%= gig.gigtitle %></p>
+                        <p class="p-description"><%= gig.gigdescription %></p>
+        
+                        <div class="post-l-container">
+        
+                          <div class="i-div">
+                            <img src="<%= user.profilePics %>" alt="">
+                          </div>
+        
+                          <div class="u-title-div">
+                            <p class="u-title" ><%= gig.gigcreator.fullname %></p>
+                          </div>
+        
+                          <div class="p-div">
+                            <p class="g-price"><%= gig.gigprice %>Tk</p>
+                          </div>
+        
+        
+        
+        
+        
+                        </div>
+                      </a>
+                      </div>
+                    
+        
+                 
+        
+                <%}%>
+              <%}%>
+        
+
+        </div>
+    </main>
+
+
+
+
+    <!--login ends-->
+
+
+
+    <%-include('partials/footer'); -%>

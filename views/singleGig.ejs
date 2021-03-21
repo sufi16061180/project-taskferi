@@ -1,0 +1,56 @@
+<%-include('partials/userHeader'); -%>
+
+
+<main>
+
+    <div class="single-gig-container">
+        <div class="single-createdby">
+            <div>
+
+            <img src="<%= user.profilePics %>" alt="">
+
+            </div>
+            <p class="g-profile-miname"><%= gig.gigcreator.fullname %></p>
+
+        </div>
+
+        <div class="single-gig-img">
+
+            <img class="gigimage" src="/uploads/thum.png" alt="">
+
+        </div>
+
+        
+
+
+        <div class="single-gig-mid">
+
+            <div>
+                <p class="g-profile-miname">Base price: <%= gig.gigprice %>Tk</p>
+                <p class="gptcr-container-heading"><%= gig.gigtitle %></p>
+                
+                <p class="gptcr-description"><%= gig.gigdescription %></p>
+
+            </div>
+
+            <div class="proposal">
+
+                <form action="/services">
+                    <input class="csp-input" type="number" name="offeramount" id="offeramount" placeholder="Offer amount" >
+                    <textarea  class="csp-input-d" type="text" name="proposal" id="proposal" placeholder="Send your proposal"></textarea>
+                    <input class="csp-input-button" type="submit" value="Send Offer">
+                </form>
+            </div>
+        </div>
+
+        
+        
+        
+    </div>
+
+</main>
+
+<%-include('partials/footer'); -%>
+
+
+

@@ -1,0 +1,85 @@
+<%-include('partials/userHeader'); -%>
+
+<main>
+
+    <div class="csp-content">
+
+
+
+            <div class="csp-header">
+
+
+                <p class="csp-header-text">Edit profile</p>
+
+            </div>
+
+            <div class="csp-profile-pic">
+
+                <img src="<%= user.profilePics %>" alt="Profile Pics" class="csp-image" id="profilePics">
+
+                <form action="" id="">
+
+                    <input type="file" name="" id="" accept="image/*"/>
+                    <input type="button" value="Remove" id="removeProfilePics" style="display: <%= user.profilePics.includes('defaultuser.png') ? 'none' : 'block' %>" class="csp-remove-button">
+
+                </form>
+
+            </div>
+
+            
+            <form action="/profile/edit-profile" method="POST">
+
+                <div>
+                    <p class="csp-form-item-header">Full name</p>
+                    <input class="csp-input <%= error.fullname ? 'is-invalid' : '' %>" value="<%= user.fullname %>" type="text" name="fullname" id="fullname" placeholder="Enter full name">
+                    <p class="csp-message"> <%= error.fullname && error.fullname %> </p>
+                </div>
+
+                <div>
+                    <p class="csp-form-item-header">User name</p>
+                    <input class="csp-input <%= error.username ? 'is-invalid' : '' %>" type="text" name="username" id="username" placeholder="Enter user name" value="<%= user.username%>">
+                    <p class="csp-message"> <%= error.username && error.username %> </p>
+                </div>
+
+                <div>
+                    <p class="csp-form-item-header">Email</p>
+                    <input class="csp-input <%= error.email ? 'is-invalid' : '' %>" type="email" name="email" id="email" placeholder="Enter email" value="<%= user.email%>">
+                    <p class="csp-message"> <%= error.email && error.email %> </p>
+                </div>
+
+
+                <div>
+                    <p class="csp-form-item-header">Mobile number</p>
+                    <input class="csp-input <%= error.mobilenumber ? 'is-invalid' : '' %>" type="number" name="mobilenumber" id="mobilenumber" placeholder="Enter mobile number" value="<%= user.mobilenumber%>">
+                    <p class="csp-message"> <%= error.mobilenumber && error.mobilenumber %> </p>
+                </div>
+
+
+                <div>
+                    <p class="csp-form-item-header">About</p>
+                    <textarea class="csp-input-d  <%= error.about ? 'is-invalid' : '' %>" type="text" name="about" id="about" placeholder="Enter about"><%= user.about %></textarea>
+                    <p class="csp-message"> <%= error.about && error.about %> </p>
+                </div>
+
+
+                <div class="csp-button-div">
+                    <input class="csp-input-button" type="submit" name="" id="" value="Update">
+                </div>
+
+
+            </form>
+
+
+
+
+
+
+    </div>
+
+
+</main>
+
+<%-include('partials/footer'); -%>
+
+
+

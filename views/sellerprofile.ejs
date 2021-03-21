@@ -1,0 +1,103 @@
+<%-include('partials/userHeader'); -%>
+
+<main>
+
+    
+  <div class="g-profilepage-button">
+
+    <a href="/profile">General profile</a>
+    <a href="#">Seller profile</a>
+  </div>
+
+  <div class="g-profile-container">
+    <div class="g-profile-top-container">
+
+      <div class="gptc-left">
+        <img class="g-profile-image" src="<%= user.profilePics %>" alt="">
+        <p class="g-profile-miname"><%= user.fullname %></p>
+        <p class="g-profile-age">24yrs</p>
+        <p class="g-profile-citycountry">Mirpur, Dhaka, Bangladesh</p>
+        <a href="/sellerprofile/edit-sellerprofile" class="edit-button">Edit</a>
+      </div>
+      <div class="gptc-right">
+        <p class="gptcr-container-heading">Title : <%= profile.title %></p>
+        <p class="gptcr-description"><%= profile.description %></p>
+      </div>
+
+
+    </div>
+
+
+    <div class="g-profile-bottom-container">
+
+      <div class="gig-header">
+
+        <p class="gpbc-container-heading">Your gigs</p>
+        <a href="/gigs/create-gig" class="create-button">Create a gig</a>
+      </div>
+
+      <div class="gigs-container">
+      
+
+      <% if(gigs.length === 0) { %>
+
+        <div>
+          <p>There is no gig</p>
+        </div>
+
+      <%}else {%>
+        <% for (let gig of gigs){%>
+
+          
+              <div class="post-container">
+                <a href="/gigs/edit-gig/<%=gig._id%>" class="gig-anchor">
+
+                <img src="<%= gig.thumbnail %>" alt="">
+                <p class="p-title" ><%= gig.gigtitle %></p>
+                <p class="p-description"><%= gig.gigdescription %></p>
+
+                <div class="post-l-container">
+
+                  <div class="i-div">
+                    <img src="<%= user.profilePics %>" alt="">
+                  </div>
+
+                  <div class="u-title-div">
+                    <p class="u-title" ><%= user.fullname %></p>
+                  </div>
+
+                  <div class="p-div">
+                    <p class="g-price"><%= gig.gigprice %>Tk</p>
+                  </div>
+
+
+
+
+
+                </div>
+              </a>
+              </div>
+
+         
+
+        <%}%>
+      <%}%>
+
+    
+    </div>
+
+
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+
+
+</main>
+<%-include('partials/footer'); -%>

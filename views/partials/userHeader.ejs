@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <title><%= title %></title>
+
+</head>
+
+<body>
+
+    <!--navigation start-->
+
+    <header class="header-container">
+
+    <div class="header-content">
+        <div class="logo-container">
+            <a class="logo-content" href="/">TaskFeri</a>
+        </div>
+
+        <div class="nav-container">
+
+                <ul class="nav-content">
+
+                    <li class="nav-list">
+                      <a class="nav-item" href="/services">Find Services</a>
+                    </li>
+                    <li class="nav-list ">
+                      <button class="nav-contracts" type="button" name="button">My Contracts</button>
+                      <ul>
+                        <li><a class="nav-sub-item" href="#">Buying Contracts</a></li>
+                        <li><a class="nav-sub-item" href="#">Selling Contracts</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-list">
+                      <a class="nav-item" href="/profile">My Profile</a>
+                    </li>
+                    <li class="nav-list">
+                      <a class="nav-item" href="#">Settings</a>
+                    </li>
+                    <li class="nav-profile-list">
+                      <button class="nav-profile" type="button" name="button"><img src=" <%= user.profilePics %>" alt=""></button>
+                      <ul>
+                        <li><a class="nav-profile-item" href="#"><%= user.fullname %></a></li>
+                        <li><a class="nav-profile-item" href="#"><img src="/bell.png" alt="">Notification</a></li>
+                        <li><a class="nav-profile-item" href="#"><img src="/help.png" alt="">Help & Support</a></li>
+                        <li><a class="nav-profile-item" href="/logout"><img src="/logout.png" alt="">Logout</a></li>
+                      </ul>
+                    </li>
+
+
+                </ul>
+
+               
+        </div>
+
+
+
+
+    </div>
+    </header>
+
+    <div class="nav-blank">
+
+    </div>
+
+
+
+</body>
+
+</html>
