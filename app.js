@@ -8,7 +8,8 @@ const setMiddleware = require('./middleware/middleware');
 const setRoutes = require('./routes/routes');
 
 
-const dbURI= 'mongodb+srv://nuren1180:nuren1180@taskferi.0bhgc.mongodb.net/taskferi_user';
+const dbURI= 'mongodb+srv://nuren1180:nuren1180@taskferi.0bhgc.mongodb.net/?retryWrites=true&w=majority';
+
 
 const app=express();
 
