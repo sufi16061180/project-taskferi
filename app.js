@@ -9,7 +9,7 @@ const setRoutes = require('./routes/routes');
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
-const dbURI= 'mongodb+srv://nuren1180:nuren1180@taskferi.0bhgc.mongodb.net/';
+const dbURI= 'mongodb+srv://nuren1180:nuren1180@taskferi.0bhgc.mongodb.net/?retryWrites=true&w=majority';
 
 
 const app=express();
